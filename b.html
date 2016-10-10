@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <button-hello></button-hello>
+</div>
+</body>
+</html>
+<script>
+    document.registerElement('button-hello', {
+        prototype: Object.create(HTMLButtonElement.prototype, {
+            createdCallback: {
+                value: function createdCallback() {
+                    this.innerHTML = '<button>hello world</button>'
+                    this.addEventListener('click', () => {
+                        alert('hello world')
+                })
+                }
+            }
+        })
+    })
+</script>

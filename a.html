@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button is="button-hello">hello world</button>
+</body>
+</html>
+<script>
+   document.registerElement('button-hello', {
+        prototype: Object.create(HTMLButtonElement.prototype, {
+            createdCallback: {
+                value: function createdCallback() {
+                    this.addEventListener('click', () => {
+                        alert('hello world')
+                })
+                }
+            }
+        }),
+        extends: 'button'
+    })
+
+
+</script>
+<!--http://web.jobbole.com/87777/-->
+<!--https://atmospherejs.com/-->
